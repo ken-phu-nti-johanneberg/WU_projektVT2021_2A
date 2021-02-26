@@ -1,0 +1,39 @@
+/* generel styling */
+
+*{
+    margin: 0px;
+}
+
+.grid_wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr, 1fr, 2fr, 1fr;
+    grid-template-areas: 
+    "he"
+    "na"
+    "ma"
+    "fo"
+    ;
+}
+    
+header{
+    background-color: blue;
+    grid-area: he;
+}
+
+nav{
+    color: red;
+    grid-area: na;
+}
+
+main{
+    color: pink;
+    grid-area: ma;
+}
+
+footer{
+    color: green;
+    grid-area: fo;
+}
