@@ -10,13 +10,34 @@
     width: 100vw;
     height: 100vh;
     display: grid;   
-    grid-template-columns: minmax(30px 1fr) 4fr;
+    grid-template-columns: 80px 4fr;
     grid-template-rows: 1fr minmax(400px, 1fr) 1fr;
     grid-template-areas: 
     "na he"
     "ma ma"
     "fo fo"
     ;
+}
+
+.inner_grid{
+    display: grid;
+    grid-template-columns: 185px 185px;
+    grid-template-rows: 250px;
+    grid-template-areas:    
+    "ny er"
+    ;
+}
+
+#nyheter{
+    margin-right: 5px;
+    background-color: gray;
+    grid-area: ny;
+}
+
+#erbjudanden{
+    margin-left: 5px;
+    background-color: gray;
+    grid: er;
 }
     
 header{
@@ -33,6 +54,9 @@ nav{
 }
 
 main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: pink;
     grid-area: ma;
 }
@@ -63,7 +87,7 @@ footer{
 }
 
 .burger{
-    margin-left: 50px;
+    margin-left: 20px;
     cursor: pointer;
 }
 
