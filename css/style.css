@@ -19,13 +19,59 @@
     ;
 }
 
-.inner_grid{
+.inner_grid_index{
     display: grid;
     grid-template-columns: 185px 185px;
     grid-template-rows: 250px;
     grid-template-areas:    
     "ny er"
     ;
+}
+
+.inner_grid_katalog{
+    display: grid;
+    grid-template-columns: 450px;
+    grid-template-rows: 160px 160px;
+    grid-template-areas:    
+    "va"
+    "ko"
+    ;
+}
+
+.inner_grid_kundservice{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 200px 200px;
+    grid-template-areas:    
+    "le re"
+    "vi ko"
+    ;
+}
+
+.nya_produkter{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px;
+    grid-template-areas: 
+    "bi bi"
+    "bi bi";
+}
+
+.inner_grid_produkter{
+    display: grid;
+    grid-template-columns: 480px;
+    grid-template-rows: 120px 120px 120px;
+    grid-template-areas:    
+    "p1"
+    "p2"
+    "p3"
+    ;
+}
+
+.ny_produkt_bild{
+    grid-area: bi;
+    background-color: red;
+    margin: 5px;
 }
 
 #nyheter{
@@ -39,7 +85,76 @@
     background-color: gray;
     grid: er;
 }
+
+#vardagsrum{
+    grid-area: va;
+    background-color: gray;
+    margin-bottom: 5px;
+}
+
+#vardagsrum img{
+    display: block;
+    width: 100%;
+    height: 88%;
+    object-fit: cover;
+}
+
+#kok{
+    grid-area: ko;
+    background-color: gray;
+    margin-top: 5px;
+}
+
+#kok img{
+    width: 100%;
+    height: 89%;
+    object-fit: contain;
+    display: block;
     
+}
+
+#leverans{
+    margin: 5px;  
+    grid-area: le;
+    background-color: gray;
+}
+
+#returnera{
+    margin: 5px;
+    grid-area: re;
+    background-color: gray;
+}
+
+#villkor{
+    margin: 5px;
+    grid-area: vi;
+    background-color: gray;
+}
+
+#kontakta_oss{
+    margin: 5px;
+    grid-area: ko;
+    background-color: gray;
+}
+
+.produkt_1{
+    margin: 5px;
+    grid-area: p1;
+    background-color: gray;
+}
+
+.produkt_2{
+    margin: 5px;
+    grid-area: p2;
+    background-color: gray;
+}
+
+.produkt_3{
+    margin: 5px;
+    grid-area: p3;
+    background-color: gray;
+}
+
 header{
     background-color: blue;
     grid-area: he;
