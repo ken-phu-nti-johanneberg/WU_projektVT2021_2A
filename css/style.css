@@ -1,4 +1,4 @@
-/* generel styling */
+/* generell styling */
 
 *{
     margin: 0px;
@@ -10,10 +10,25 @@ body{
     overflow-x: hidden;
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
+h2{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+p{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Styling för gridlayouts */
+
 .grid_wrapper{
     width: 100vw;
     height: 100vh;
-    display: grid;   
+    display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: 100px auto 100px;
     grid-template-areas: 
@@ -25,16 +40,32 @@ body{
 
 .inner_grid_index{
     display: grid;
-    grid-template-columns: 175px 175px;
-    grid-template-rows: 300px 300px;
-    grid-template-areas:    
+    margin-top: 5px;
+    margin-bottom: 30px;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: auto 293px;
+    grid-template-areas:  
+    "in in"  
     "ny er"
     ;
 }
 
+.produkter_index{
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 95px 95px;
+    grid-template-rows: 130px 130px;
+    grid-template-areas: 
+    "bi1 bi2"
+    "bi3 bi4";
+}
+
 .inner_grid_katalog{
     display: grid;
-    grid-template-columns: 1fr;
+    margin-right: 22px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    grid-template-columns: 450px;
     grid-template-rows: 395px 395px;
     grid-template-areas:    
     "va"
@@ -44,6 +75,9 @@ body{
 
 .inner_grid_kundservice{
     display: grid;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    gap: 7px;
     grid-template-columns: 175px 175px;
     grid-template-rows: 175px 175px;
     grid-template-areas:    
@@ -52,17 +86,11 @@ body{
     ;
 }
 
-.nya_produkter{
-    display: grid;
-    grid-template-columns: 88px 88px;
-    grid-template-rows: 150px 150px;
-    grid-template-areas: 
-    "bi bi"
-    "bi bi";
-}
-
 .inner_grid_produkter{
     display: grid;
+    margin-right: 19px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     grid-template-columns: 1fr;
     grid-template-rows: 266px 266px 266px;
     grid-template-areas:    
@@ -72,111 +100,214 @@ body{
     ;
 }
 
+.om_oss_grid{
+    display: grid;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    grid-template-columns: 400px;
+    grid-template-rows: 150px auto 150px auto;
+    grid-template-areas: 
+    "hi"
+    "ht"
+    "vp"
+    "vt"
 
-.ny_produkt_bild{
-    grid-area: bi;
+    ;
+}
+
+/* Styling för class/id */
+
+/* Index */
+.produkt_index_bild_1{
+    grid-area: bi1;
     background-color: white;
-    margin: 5px;
+}
+
+.produkt_index_bild_2{
+    grid-area: bi2;
+    background-color: white;
+}
+
+.produkt_index_bild_3{
+    grid-area: bi3;
+    background-color: white;
+}
+
+.produkt_index_bild_4{
+    grid-area: bi4;
+    background-color: white;
+}
+
+.produkter_index img{
+    display: block;
+    width: 100%;
+    height: 88%;
+    object-fit: cover;
+    padding: 3px;
 }
 
 #nyheter{
     margin-right: 5px;
-    background-color: gray;
+    background-color: white;
     grid-area: ny;
 }
 
 #erbjudanden{
     margin-left: 5px;
-    background-color: gray;
-    grid: er;
+    background-color: white;
+    grid-area: er;
 }
 
+#info_index{
+    grid-area: in;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+/* Katalog */
 #vardagsrum{
     grid-area: va;
-    background-color: gray;
+    background-color: white;
     margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#vardagsrum h2{
+    display: flex;
+    justify-content: center;
 }
 
 #vardagsrum img{
     display: block;
     width: 100%;
-    height: 88%;
+    height: 92%;
     object-fit: cover;
 }
 
 #kok{
     grid-area: ko;
-    background-color: gray;
+    background-color: white;
     margin-top: 5px;
+    font-size: 18px;
+}
+
+#kok h2{
+    display: flex;
+    justify-content: center;
 }
 
 #kok img{
     width: 100%;
-    height: 89%;
+    height: 92%;
     object-fit: cover;
     display: block;
     
+}
+
+.produkt_1{
+    margin: 5px;
+    grid-area: p1;
+    background-color: white;
+}
+
+.produkt_2{
+    margin: 5px;
+    grid-area: p2;
+    background-color: white;
+}
+
+.produkt_3{
+    margin: 5px;
+    grid-area: p3;
+    background-color: white;
 }
 
 .inner_grid_produkter section img{
     display: block;
     object-fit: cover;
     width: 100%;
-    height: 89%;
+    height: 90%;
 }
 
+.inner_grid_produkter h2{
+    display: flex;
+    justify-content: center;
+}
+
+/* Kundservice */
 #leverans{
-    margin: 5px;  
     grid-area: le;
-    background-color: gray;
+    background-color: white;
 }
 
 #returnera{
-    margin: 5px;
     grid-area: re;
-    background-color: gray;
+    background-color: white;
 }
 
 #villkor{
-    margin: 5px;
     grid-area: vi;
-    background-color: gray;
+    background-color: white;
 }
 
 #kontakta_oss{
-    margin: 5px;
     grid-area: ko;
+    background-color: white;
+}
+
+.inner_grid_kundservice img{
+    display: block;
+    width: 100%;
+    height: 84%;
+    object-fit: cover;
+}
+
+.inner_grid_kundservice h2{
+    display: flex;
+    justify-content: center;
+}
+
+/* Om oss*/
+.historia{
+    grid-area: hi;
     background-color: gray;
 }
 
-.produkt_1{
-    margin: 5px;
-    grid-area: p1;
-    background-color: gray;
+.historia_text{
+    grid-area: ht;
+    background-color: white;
 }
 
-.produkt_2{
-    margin: 5px;
-    grid-area: p2;
+.vora_produkter{
+    margin-top: 30px;
+    grid-area: vp;
     background-color: gray;
+
 }
 
-.produkt_3{
-    margin: 5px;
-    grid-area: p3;
-    background-color: gray;
+.vora_produkter_text{
+    grid-area: vt;
+    background-color: white;
 }
 
+.om_oss_grid img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Generella taggar */
 header{
-    background-color: blue;
     grid-area: he;
 }
 
 nav{
-    background-color: red;
+    background-color: white;
     grid-area: na;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -184,13 +315,30 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: pink;
     grid-area: ma;
+    background-image: url(../img/bakgrundsbild.jpg);
 }
 
 footer{
-    background-color: green;
+    background-color:whitesmoke;
     grid-area: fo;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Menyer */
+.footer_list{
+    list-style-type: none;
+}
+
+.footer_item{
+    text-decoration: none;
+    color: black;
+}
+
+.footer_item:hover{
+    text-decoration: underline;
 }
 
 .meny_list{
@@ -198,7 +346,7 @@ footer{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: wheat;
+    background-color: white;
     position: absolute;
     left: -90vw;
     height: 482px;
@@ -211,8 +359,14 @@ footer{
 .meny_item{
     text-decoration: none;
     font-size: 17px;   
+    color: black;
 }
 
+.meny_item:hover{
+    text-decoration: underline;
+}
+
+/* Burgermeny */
 .burger{
     margin-left: 20px;
     cursor: pointer;
@@ -242,3 +396,81 @@ footer{
     transform: translateX(90vw)
 }
 
+/* Desktopversion */
+@media screen and (min-width: 1200px) {
+    .grid_wrapper{
+        grid-template-rows: 100px 50px auto 100px;
+        grid-template-areas: 
+        "he he"
+        "na na"
+        "ma ma"
+        "fo fo"
+        ;
+    }
+
+    .inner_grid_index{
+        grid-template-columns: 450px 450px;
+        grid-template-rows: auto 480px;
+    }
+
+    .produkter_index{
+        grid-template-columns: 220px 220px;
+        grid-template-rows: 223px 223px;
+    }
+
+    .inner_grid_katalog{
+        margin-right: 0px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 395px 395px;
+    }
+
+    .inner_grid_kundservice{
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 300px 300px;
+    }
+
+    .om_oss_grid{
+        grid-template-columns: 1000px;
+        ;
+    }
+
+    .produkter_index img{
+        height: 92%;
+    }
+
+    #vardagsrum img{
+        height: 93%;
+    }
+
+    #kok img{
+        height: 93%;
+    }
+
+    
+    .inner_grid_kundservice img{
+        height: 91%;
+    }
+
+    .burger{
+        display: none;
+    }
+
+    .meny_list{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: rgb(240, 240, 240);
+        position: relative;
+        left: 0vw;
+        height: 50px;
+        top: auto;
+        width: 100%;
+        list-style-type: none;
+        transition: none;
+    }
+
+    .navActive{
+        transform: none;
+    }
+}
