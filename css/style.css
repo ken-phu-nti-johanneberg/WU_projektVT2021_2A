@@ -73,6 +73,18 @@ p{
     ;
 }
 
+.grid_produkt_info{
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    grid-template-columns: 450px;
+    grid-template-rows: 395px 395px;
+    grid-template-areas:    
+    "pr"
+    "br"
+    ;
+}
+
 .inner_grid_kundservice{
     display: grid;
     margin-top: 25px;
@@ -266,6 +278,25 @@ p{
     display: flex;
     justify-content: center;
 }
+
+/* Produkt info */
+#produkt{
+    grid-area: pr;
+    background-color: black;
+}
+
+#produkt_beskrivning{
+    grid-area: br;
+    background-color: white;
+}
+
+#produkt img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 
 /* Om oss*/
 .historia{
