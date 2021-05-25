@@ -1,3 +1,5 @@
+/* Ändra på margin på alla grid för mobilsidan och kanske även desktop */
+
 /* generell styling */
 
 *{
@@ -42,7 +44,8 @@ p{
     display: grid;
     margin-top: 5px;
     margin-bottom: 30px;
-    grid-template-columns: 200px 200px;
+    grid-template-columns: 1fr 1fr;
+    /* 200px 200px innan */
     grid-template-rows: auto 293px;
     grid-template-areas:  
     "in in"  
@@ -53,7 +56,8 @@ p{
 .produkter_index{
     display: grid;
     gap: 5px;
-    grid-template-columns: 95px 95px;
+    grid-template-columns: 1fr 1fr;
+    /* 95px 95px */
     grid-template-rows: 130px 130px;
     grid-template-areas: 
     "bi1 bi2"
@@ -62,14 +66,24 @@ p{
 
 .inner_grid_katalog{
     display: grid;
-    margin-right: 22px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    grid-template-columns: 450px;
-    grid-template-rows: 395px 395px;
+    grid-template-columns: 1fr;
+    /* 450 px innan */
+    grid-template-rows: 399px 399px;
     grid-template-areas:    
     "va"
     "ko"
+    ;
+}
+
+.inner_grid_produkter{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 266px 266px 266px;
+    grid-template-areas:
+    "pm"    
+    "p1"
+    "p2"
+    "p3"
     ;
 }
 
@@ -77,7 +91,8 @@ p{
     display: grid;
     margin-top: 20px;
     margin-bottom: 20px;
-    grid-template-columns: 450px;
+    grid-template-columns: 1fr;
+    /* 450px innan */
     grid-template-rows: 395px 395px;
     grid-template-areas:    
     "pr"
@@ -91,6 +106,7 @@ p{
     margin-bottom: 25px;
     gap: 7px;
     grid-template-columns: 175px 175px;
+    /* Vilka mått ska jag använda för att gör dem kvadratisk */
     grid-template-rows: 175px 175px;
     grid-template-areas:    
     "le re"
@@ -98,29 +114,18 @@ p{
     ;
 }
 
-.inner_grid_produkter{
-    display: grid;
-    margin-right: 19px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    grid-template-columns: 1fr;
-    grid-template-rows: 266px 266px 266px;
-    grid-template-areas:    
-    "p1"
-    "p2"
-    "p3"
-    ;
-}
-
 .om_oss_grid{
     display: grid;
     margin-top: 25px;
     margin-bottom: 25px;
-    grid-template-columns: 400px;
-    grid-template-rows: 150px auto 150px auto;
+    grid-template-columns: 1fr;
+    /* 400px innan */
+    grid-template-rows: 150px auto 150px auto 150px auto;
     grid-template-areas: 
     "hi"
     "ht"
+    "ib"
+    "it"
     "vp"
     "vt"
 
@@ -153,7 +158,8 @@ p{
 .produkter_index img{
     display: block;
     width: 100%;
-    height: 88%;
+    height: 100%;
+    /* 88% innan */
     object-fit: cover;
     padding: 3px;
 }
@@ -180,7 +186,7 @@ p{
 #vardagsrum{
     grid-area: va;
     background-color: white;
-    margin-bottom: 5px;
+    margin: 10px;
     font-size: 18px;
 }
 
@@ -192,14 +198,14 @@ p{
 #vardagsrum img{
     display: block;
     width: 100%;
-    height: 92%;
+    height: 93%;
     object-fit: cover;
 }
 
 #kok{
     grid-area: ko;
     background-color: white;
-    margin-top: 5px;
+    margin: 10px;
     font-size: 18px;
 }
 
@@ -210,26 +216,35 @@ p{
 
 #kok img{
     width: 100%;
-    height: 92%;
+    height: 93%;
     object-fit: cover;
     display: block;
     
 }
 
-.produkt_1{
+/* .produkt_meny{
+    grid-area: pm;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 5px;
+} */
+
+.produkt_1{
+    margin: 10px;
     grid-area: p1;
     background-color: white;
 }
 
 .produkt_2{
-    margin: 5px;
+    margin: 10px;
     grid-area: p2;
     background-color: white;
 }
 
 .produkt_3{
-    margin: 5px;
+    margin: 10px;
     grid-area: p3;
     background-color: white;
 }
@@ -301,16 +316,29 @@ p{
 /* Om oss*/
 .historia{
     grid-area: hi;
+    margin: 5px;
     background-color: gray;
 }
 
 .historia_text{
     grid-area: ht;
+    margin: 5px;
+    background-color: white;
+}
+
+.vision{
+    grid-area: ib;
+    background-color: gray;
+}
+
+.vision_text{
+    grid-area: it;
     background-color: white;
 }
 
 .vora_produkter{
     margin-top: 30px;
+    margin: 5px;
     grid-area: vp;
     background-color: gray;
 
@@ -318,6 +346,7 @@ p{
 
 .vora_produkter_text{
     grid-area: vt;
+    margin: 5px;
     background-color: white;
 }
 
@@ -393,6 +422,29 @@ footer{
     color: black;
 }
 
+/* Hur gör jag menyn större för produkterna */
+.produkt_list{
+    margin: 5px;
+    grid-area: pm;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    background-color: rgb(240, 240, 240);
+    list-style-type: none;
+}
+
+.produkt_item{
+    text-decoration: none;
+    font-size: 25px;   
+    color: black;
+}
+
+.produkt_item:hover{
+    text-decoration: underline;
+}
+
 .meny_item:hover{
     text-decoration: underline;
 }
@@ -462,6 +514,24 @@ footer{
 
     .om_oss_grid{
         grid-template-columns: 1000px;
+        ;
+    }
+
+    .om_oss_grid{
+        display: grid;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        grid-template-columns: 1fr 1fr;
+        /* 400px innan */
+        grid-template-rows: 250px auto 150px auto 150px auto;
+        grid-template-areas: 
+        "hi hi"
+        "ht ht"
+        "it ib"
+        "it ib"
+        "vp vt"
+        "vp vt"
+    
         ;
     }
 
