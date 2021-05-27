@@ -93,7 +93,7 @@ p{
     margin-bottom: 20px;
     grid-template-columns: 1fr;
     /* 450px innan */
-    grid-template-rows: 395px 395px;
+    grid-template-rows: 395px;
     grid-template-areas:    
     "pr"
     "br"
@@ -297,12 +297,27 @@ p{
 /* Produkt info */
 #produkt{
     grid-area: pr;
-    background-color: black;
+    background-color: white;
+    padding: 30px;
 }
 
 #produkt_beskrivning{
     grid-area: br;
     background-color: white;
+}
+
+#produkt_beskrivning p{
+    margin-top: 10px;
+}
+
+/* Rounded borders? */
+#text_box{
+    border: solid 1.5px black;
+    background-color: rgb(125, 100, 216);
+    display: inline-block;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 15px;
 }
 
 #produkt img{
@@ -493,6 +508,7 @@ footer{
     .inner_grid_produkter{
         display: grid;
         /* Jag vill att katalog sektionen ska ta mer plats, dock måste jag fixa bildkvaliten eftersom den blir bajs. */
+        /* Kanske även impletenmera min-max eller vad det hette. För olika desktop skärmar */
         grid-template-columns: 400px 400px 400px;
         grid-template-rows: 200px 266px 266px 266px;
         grid-template-areas:
@@ -500,6 +516,18 @@ footer{
         "p1 p1 p1"
         "p2 p2 p2"
         "p3 p3 p3"
+        ;
+    }
+
+    .grid_produkt_info{
+        display: grid;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        grid-template-columns: 1.7fr 2fr;
+        /* 450px innan */
+        grid-template-rows: 395px;
+        grid-template-areas:    
+        "pr br"
         ;
     }
 
@@ -529,6 +557,17 @@ footer{
     }
 
 
+
+    /* Produkt info */
+#produkt{
+    grid-area: pr;
+    background-color: white;
+}
+
+#produkt_beskrivning{
+    grid-area: br;
+    background-color: white;
+}
 
     .inner_grid_index{
         grid-template-columns: 450px 450px;
