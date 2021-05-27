@@ -430,7 +430,6 @@ footer{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    position: relative;
     background-color: rgb(240, 240, 240);
     list-style-type: none;
 }
@@ -490,6 +489,46 @@ footer{
         "fo fo"
         ;
     }
+
+    .inner_grid_produkter{
+        display: grid;
+        /* Jag vill att katalog sektionen ska ta mer plats, dock måste jag fixa bildkvaliten eftersom den blir bajs. */
+        grid-template-columns: 400px 400px 400px;
+        grid-template-rows: 200px 266px 266px 266px;
+        grid-template-areas:
+        "l1 l2 l3"    
+        "p1 p1 p1"
+        "p2 p2 p2"
+        "p3 p3 p3"
+        ;
+    }
+
+    .produkt_list{
+        grid-area: none;
+        display: none;
+    }
+
+    .produkt_list_item1{
+        grid-area: l1;
+        margin: 10px;
+        background-color: white;
+    }
+
+    
+    .produkt_list_item2{
+        grid-area: l2;
+        margin: 10px;
+        background-color: white;
+    }
+
+
+    .produkt_list_item3{
+        grid-area: l3;
+        margin: 10px;
+        background-color: white;
+    }
+
+
 
     .inner_grid_index{
         grid-template-columns: 450px 450px;
