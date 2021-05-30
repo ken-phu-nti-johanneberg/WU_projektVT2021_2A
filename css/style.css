@@ -1,6 +1,7 @@
-/* Ändra på margin på alla grid för mobilsidan och kanske även desktop */
 
 /* generell styling */
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 *{
     margin: 0px;
@@ -10,6 +11,7 @@
 
 body{
     overflow-x: hidden;
+    font-family: 'Quicksand', sans-serif;
 }
 
 a{
@@ -17,13 +19,6 @@ a{
     color: black;
 }
 
-h2{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-p{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
 
 /* Styling för gridlayouts */
 
@@ -45,7 +40,6 @@ p{
     margin-top: 5px;
     margin-bottom: 30px;
     grid-template-columns: 1fr 1fr;
-    /* 200px 200px innan */
     grid-template-rows: auto 293px;
     grid-template-areas:  
     "in in"  
@@ -57,7 +51,6 @@ p{
     display: grid;
     gap: 5px;
     grid-template-columns: 1fr 1fr;
-    /* 95px 95px */
     grid-template-rows: 130px 130px;
     grid-template-areas: 
     "bi1 bi2"
@@ -67,7 +60,6 @@ p{
 .inner_grid_katalog{
     display: grid;
     grid-template-columns: 1fr;
-    /* 450 px innan */
     grid-template-rows: 399px 399px;
     grid-template-areas:    
     "va"
@@ -92,8 +84,7 @@ p{
     margin-top: 20px;
     margin-bottom: 20px;
     grid-template-columns: 1fr;
-    /* 450px innan */
-    grid-template-rows: 395px;
+    grid-template-rows: 395px 395px;
     grid-template-areas:    
     "pr"
     "br"
@@ -106,7 +97,6 @@ p{
     margin-bottom: 25px;
     gap: 7px;
     grid-template-columns: 175px 175px;
-    /* Vilka mått ska jag använda för att gör dem kvadratisk */
     grid-template-rows: 175px 175px;
     grid-template-areas:    
     "le re"
@@ -119,7 +109,6 @@ p{
     margin-top: 25px;
     margin-bottom: 25px;
     grid-template-columns: 1fr;
-    /* 400px innan */
     grid-template-rows: 150px auto 150px auto 150px auto;
     grid-template-areas: 
     "hi"
@@ -159,7 +148,6 @@ p{
     display: block;
     width: 100%;
     height: 100%;
-    /* 88% innan */
     object-fit: cover;
     padding: 3px;
 }
@@ -177,8 +165,11 @@ p{
 }
 
 #info_index{
+    display: flex;
+    justify-content: center;
     grid-area: in;
     background-color: white;
+    font-size: 25px;
     margin-bottom: 5px;
 }
 
@@ -222,6 +213,7 @@ p{
     
 }
 
+/* Vardagsrum / kök */
 .produkt_list_item1{
    display: none;
 }
@@ -235,15 +227,6 @@ p{
 .produkt_list_item3{
     display: none;
 }
-
-/* .produkt_meny{
-    grid-area: pm;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5px;
-} */
 
 .produkt_1{
     margin: 10px;
@@ -273,6 +256,48 @@ p{
 .inner_grid_produkter h2{
     display: flex;
     justify-content: center;
+}
+
+/* Produkt info */
+#produkt{
+    grid-area: pr;
+    background-color: white;
+    padding: 30px;
+}
+
+#produkt_beskrivning{
+    grid-area: br;
+    background-color: white;
+}
+
+#produkt_beskrivning p{
+    margin-top: 10px;
+}
+
+#text_box h4{
+    color: white;
+}
+
+#text_box h4:hover{
+    text-decoration: underline;
+    text-decoration-color: black;
+}
+
+#text_box{
+    border: solid 1.5px white;
+    background-color: rgb(125, 100, 216);
+    display: inline-block;
+    border-radius: 50px;
+    padding: 20px;
+    margin: 15px;
+    margin-left: -3px;
+}
+
+#produkt img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Kundservice */
@@ -308,52 +333,6 @@ p{
     justify-content: center;
 }
 
-/* Produkt info */
-#produkt{
-    grid-area: pr;
-    background-color: white;
-    padding: 30px;
-}
-
-#produkt_beskrivning{
-    grid-area: br;
-    background-color: white;
-}
-
-#produkt_beskrivning p{
-    margin-top: 10px;
-}
-
-/* Rounded borders? border-radius*/
-/* Byt font-style */
-#text_box h4{
-    color: white;
-}
-
-/* Ska underline vara svart eller vit */
-#text_box h4:hover{
-    text-decoration: underline;
-    text-decoration-color: black;
-}
-
-#text_box{
-    border: solid 1.5px white;
-    background-color: rgb(125, 100, 216);
-    display: inline-block;
-    border-radius: 50px;
-    padding: 20px;
-    margin: 15px;
-    margin-left: -3px;
-}
-
-#produkt img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-
 /* Om oss*/
 .historia{
     grid-area: hi;
@@ -369,16 +348,17 @@ p{
 
 .vision{
     grid-area: ib;
+    margin: 5px;
     background-color: gray;
 }
 
 .vision_text{
     grid-area: it;
+    margin: 5px;
     background-color: white;
 }
 
 .vora_produkter{
-    margin-top: 30px;
     margin: 5px;
     grid-area: vp;
     background-color: gray;
@@ -396,7 +376,6 @@ p{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* background-position: ; */
 }
 
 
@@ -442,22 +421,6 @@ footer{
 .footer_item:hover{
     text-decoration: underline;
 }
-/* 
-.meny_list{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: white;
-    position: absolute;
-    left: -90vw;
-    height: 482px;
-    top: 83px;
-    width: 20%;
-    list-style-type: none;
-    transition: all 1s;
-} */
-
 
 .meny_list{
     display: flex;
@@ -471,7 +434,7 @@ footer{
     top: 83px;
     width: 20%;
     list-style-type: none;
-    transition: all 1s;
+    transition: all 0.3s;
 }
 
 .meny_item{
@@ -480,7 +443,6 @@ footer{
     color: black;
 }
 
-/* Hur gör jag menyn större för produkterna */
 .produkt_list{
     margin: 5px;
     grid-area: pm;
@@ -532,10 +494,6 @@ footer{
     transform: rotate(45deg) translate(-5px, -6px);
 }
 
-/* .navActive{
-    transform: translateX(90vw);
-} */
-
 .navActive{
     transform: translateX(90vw);
     width: 100%;
@@ -550,6 +508,7 @@ footer{
 
 /* Desktopversion */
 @media screen and (min-width: 1200px) {
+    /* Gridlayouter */
     .grid_wrapper{
         grid-template-rows: 100px 50px auto 100px;
         grid-template-areas: 
@@ -560,12 +519,10 @@ footer{
         ;
     }
 
+
     .inner_grid_produkter{
-        display: grid;
-        /* Jag vill att katalog sektionen ska ta mer plats, dock måste jag fixa bildkvaliten eftersom den blir bajs. */
-        /* Kanske även impletenmera min-max eller vad det hette. För olika desktop skärmar */
-        grid-template-columns: 400px 400px 400px;
-        grid-template-rows: 200px 266px 266px 266px;
+        grid-template-columns: 320px 320px 320px;
+        grid-template-rows: 200px 380px 380px 380px;
         grid-template-areas:
         "l1 l2 l3"    
         "p1 p1 p1"
@@ -574,16 +531,66 @@ footer{
         ;
     }
 
+    .inner_grid_index{
+        grid-template-columns: 450px 450px;
+        grid-template-rows: auto 480px;
+    }
+
+    .produkter_index{
+        grid-template-columns: 220px 220px;
+        grid-template-rows: 223px 223px;
+    }
+
+    .inner_grid_katalog{
+        margin-right: 0px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 395px 395px;
+    }
+
+    .inner_grid_kundservice{
+        grid-template-columns: 300px 300px;
+        grid-template-rows: 300px 300px;
+    }
+
+    .om_oss_grid{
+        margin: 45px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px auto auto auto;
+        grid-template-areas: 
+        "hi hi"
+        "ht ht"
+        "it ib"
+        "vp vt"
+        ;
+    }
+
     .grid_produkt_info{
-        display: grid;
-        margin-top: 20px;
-        margin-bottom: 20px;
         grid-template-columns: 1.7fr 2fr;
-        /* 450px innan */
         grid-template-rows: 395px;
         grid-template-areas:    
         "pr br"
         ;
+    }
+
+    .produkt_1{
+        margin-top: 10px;
+        margin-bottom: 30px;
+        grid-area: p1;
+        background-color: white;
+    }
+    
+    .produkt_2{
+        margin-top: 10px;
+        margin-bottom: 30px;
+        grid-area: p2;
+        background-color: white;
+    }
+    
+    .produkt_3{
+        margin-top: 10px;
+        margin-bottom: 30px;
+        grid-area: p3;
+        background-color: white;
     }
 
     .produkt_list{
@@ -614,61 +621,37 @@ footer{
         background-color: white;
     }
 
+    .produkt_list_item1 h3{
+        display: flex;
+        justify-content: center;
+    }
 
+    .produkt_list_item2 h3{
+        display: flex;
+        justify-content: center;
+    }
+
+    .produkt_list_item h3{
+        display: flex;
+        justify-content: center;
+    }
+
+    .inner_grid_produkter section img{
+        display: block;
+        object-fit: cover;
+        width: 100%;
+        height: 95%;
+    }
 
     /* Produkt info */
-#produkt{
-    grid-area: pr;
-    background-color: white;
-}
-
-#produkt_beskrivning{
-    grid-area: br;
-    background-color: white;
-}
-
-    .inner_grid_index{
-        grid-template-columns: 450px 450px;
-        grid-template-rows: auto 480px;
+    #produkt{
+        grid-area: pr;
+        background-color: white;
     }
 
-    .produkter_index{
-        grid-template-columns: 220px 220px;
-        grid-template-rows: 223px 223px;
-    }
-
-    .inner_grid_katalog{
-        margin-right: 0px;
-        grid-template-columns: 1fr;
-        grid-template-rows: 395px 395px;
-    }
-
-    .inner_grid_kundservice{
-        grid-template-columns: 300px 300px;
-        grid-template-rows: 300px 300px;
-    }
-
-    .om_oss_grid{
-        grid-template-columns: 1000px;
-        ;
-    }
-
-    .om_oss_grid{
-        display: grid;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        grid-template-columns: 1fr 1fr;
-        /* 400px innan */
-        grid-template-rows: 250px auto 150px auto 150px auto;
-        grid-template-areas: 
-        "hi hi"
-        "ht ht"
-        "it ib"
-        "it ib"
-        "vp vt"
-        "vp vt"
-    
-        ;
+    #produkt_beskrivning{
+        grid-area: br;
+        background-color: white;
     }
 
     .produkter_index img{
